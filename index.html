@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | E-commerce product page</title>
+  <link rel="stylesheet" href="CSS.css">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+
+</head>
+
+<body>
+
+  <header class="Header">
+    <div class="Nav-Logo">
+      <div class="BtnMobile" data-state="unactive"><img src="./images/icon-menu.svg" alt=""></div>
+      <a class="LogoImg" href="#"><img src="./images/logo.svg" width="138" height="20" alt=""></a>
+      <nav class="Nav" aria-label="Main Navigation">
+        <ul class="Navigation">
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Men</a></li>
+          <li><a href="#">Women</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    
+    <div class="Buys-Profile">
+      <div class="CartBtn">
+       <div class="CartImg"><img src="./images/icon-cart.svg" alt=""></div> 
+        <span class="acount Zero">5</span>
+      </div>
+
+      <div class="Buys">
+        <h1 class="LittleTitle">Cart</h1>
+        <div id="BuysContainer">
+          <span class="Empty">Your cart is empty.</span>
+        </div>
+      </div>
+
+      <div class="ProfileImg">
+        <img src="./images/image-avatar.png" alt="">
+      </div>
+    </div>
+  </header>
+
+  <main class="Main">
+    <div class="ContentContainer">
+
+ 
+      <div class="ImagesShoesContainer">
+        <div class="MainImages">
+          <img data-position="1" src="./images/image-product-1.jpg" alt="">
+          <img data-position="2"  src="./images/image-product-2.jpg" alt="">
+          <img data-position="3"  src="./images/image-product-3.jpg" alt="">
+          <img data-position="4"  src="./images/image-product-4.jpg" alt="">
+        </div>
+        <div class="Previews">
+          <img class="active" src="./images/image-product-1.jpg" alt="">
+          <img  src="./images/image-product-2.jpg" alt="">
+          <img  src="./images/image-product-3.jpg" alt="">
+          <img  src="./images/image-product-4.jpg" alt="">
+        </div>
+      </div>
+      
+      <div class="InfosProduct">
+        <span class="Company">Senaker company</span>
+        <h1 class="Title">Fall Limited Edition Senakers</h1>
+        <p class="Description">These low-progile sneakers are your perfet casual wear companion. Featuring a durable rubber outer sole, they´ll withstand everything the weather can offer</p>
+        <div class="Prices">
+          <span class="MainPrice">$125.00</span>
+          <span class="Descount">50%</span>
+          <span class="OldPrice">$250.00</span>
+        </div>
+
+        <div class="Add">
+          <div class="PlusLess">
+            <img id="Minus" src="./images/icon-minus.svg" alt="">
+            <span id="Amount">0</span>
+            <img id="Plus" src="./images/icon-plus.svg" alt="">
+          </div>
+
+          <a href="#" id="AddCart"><img src="./images/icon-cart-white.svg"> Add to cart</a>
+        </div>
+      </div>
+    </div><!--ImagesShoesContainer-->
+    </div><!--ContentContainer-->
+  </main>
+
+</body>
+<script type="module" src="./Scripts/script.js"></script>
+
+</html>

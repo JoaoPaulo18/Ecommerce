@@ -1,0 +1,301 @@
+/*Resets*/
+.BtnMobile{
+  display: none;
+  cursor: pointer;
+  transition: .3s;
+}
+.BtnMobile.active{
+  transform: rotate(90deg);
+}
+
+.Header,.Nav-Logo,.Navigation{
+  display: flex;
+}
+.Header{
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+}
+
+.Header::after{
+  content: '';  
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: rgba(44, 44, 44, .15);
+  position: absolute;
+  left: 0;
+  bottom: -1rem;
+}
+.Nav-Logo{
+  gap: 3rem;
+  align-items:center;
+}
+.Navigation{
+  gap: 1rem;
+  align-items: center;
+}
+.Navigation a{
+  font-weight: 700;
+  color: rgba(44, 44, 44, .5);
+  position: relative;
+  cursor: pointer;
+}
+.Navigation a::after{
+  content: '';
+  display: block;
+  height: 4px;
+  width: 100%;
+  bottom: -4rem;
+  position: absolute;
+}
+.Navigation a:hover{
+  color: black;
+}
+.Navigation a:hover::after{
+  background: orangered;
+}
+
+.Buys-Profile{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.Buys-Profile .CartBtn, .ProfileImg{
+  cursor: pointer;
+}
+.Buys-Profile img{
+  max-width: 44px;
+}
+.CartBtn{
+  position: relative;
+}
+.CartBtn .acount{
+  position: absolute;
+  color: white;
+  font-size: .7rem;
+  background: orangered;
+  padding: 1px 8px;
+  border-radius: 10px;
+  top: -10px;
+  left: 10px;
+}
+
+/**ENQUANTO O CART NÃO TIVER NENHUM ITEM DENTRO**/
+.CartBtn .acount.Zero{
+  display: none;
+}
+
+.Buys{
+  position: absolute;
+  top: 5rem;
+  right: 0rem;
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0px 10px 20px -5px rgba(44, 44, 44, .5);
+  z-index: 201;
+  display: grid;
+  gap: 2rem;
+  width: max-content;
+  opacity: 0;
+  transition: .3s;
+  pointer-events: none;
+}
+/**ANIMAÇÃO COMPRAS**/
+
+@media (min-width:641px){
+  .CartBtn:hover + .Buys{
+    opacity: 1;
+    right: 1rem;
+    pointer-events: all;
+  }
+}
+ .Buys.active{
+  opacity: 1;
+  right: 1rem;
+  pointer-events: all;
+}
+
+/***-----------------------**/
+
+.LittleTitle{
+  font-size: 1rem;
+  position: relative;
+}
+.LittleTitle::after{
+    content: '';
+    display: block;
+    width: calc(100% + 2rem);
+    height: 1px;
+    background: rgba(44, 44, 44, .3);
+    position: absolute;
+    left: -1rem;
+    top: 1.95rem;
+  }
+
+#BuysContainer{
+  min-width:350px;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Empty{
+  font-weight: 900;
+  color: rgba(44, 44, 44, .35);
+}
+
+/***FAZER AQUI A ESTILIZAÇÃO DE QUANDO O CART TIVER ALGUM ITEM***/
+.InfosProduct{
+  display: flex;
+  flex-direction: column;
+}
+.Texts{
+  display: flex;
+  align-items:flex-start;
+  gap: 1rem;
+  height: max-content;
+}
+.InfosProduct .Texts img:first-child{
+  max-width: 55px;
+}
+.Texts img:last-child{
+  margin-top: .2rem;
+  cursor: pointer;
+}
+.TextInfos{
+  display: grid;
+  gap: 1rem;
+}
+.infoTitle{
+  font-weight: 700;
+  color: rgba(44, 44, 44, .3);
+}
+.Prices{
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: rgba(44, 44, 44, .5);
+}
+.Total{
+  color: black;
+}
+#Checkout{
+  background: #EB771B;
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 10px;
+}
+.ProfileImg img{
+  border: 3px solid transparent;
+  border-radius: 50%;
+}
+.ProfileImg:hover img{
+  border-color: orangered;
+}
+
+
+@media (max-width:780px) {
+  .Navigation a{
+    font-size: .8rem;
+  }
+  .Nav-Logo{
+    gap: 2rem;
+  } 
+  .Buys-Profile{
+    gap: 1rem;
+  }
+}
+
+
+@media (max-width:640px) {
+  .Main{
+    margin-top: 0;
+   }
+   .Header{
+     padding: .5rem;
+     position: fixed;
+     z-index: 200;
+     background: white;
+     box-shadow: 5px 10px 15px -5px rgba(44, 44, 44, .5);
+   }
+   .Header::after{
+    display: none;
+   }
+   .LogoImg img{
+    max-width: 120px;
+   }
+    .BtnMobile{
+      display: block;
+      position: relative;
+      z-index: 200;
+    }
+    .LogoImg{
+      order: 2;
+    }
+    .Nav-Logo{
+      align-items: flex-end;
+      gap: 1rem;
+    }
+    .Nav{
+      order: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, .7);
+      opacity: 0;
+      transition: .3s;
+      pointer-events: none;
+    }
+    .Nav.active{
+      pointer-events: all;
+      opacity: 1;
+      left: 0;
+      z-index: 199;
+    }
+    .Navigation{
+      position: relative;
+      background: white;
+      width: max-content;
+      height: 100%;
+      left: -100%;
+      top: 0;
+      flex-direction: column;
+      align-items: flex-start;
+      box-shadow: 3px 3px 3px 0 rgba(44, 44, 44, .3);
+      border-radius: 0 8px 8px 0;
+      padding: 5rem 5rem 5rem 2rem;
+      transition: .3s;
+    }
+    .Navigation.active{
+     left: 0 ;
+    }
+    .Navigation a{
+      font-size: 1rem;
+    }
+    .Navigation a::after{
+      display: none;
+    }
+
+    /***MODIFICAÇÕES CART**/
+    .Buys,.CartBtn:hover + .Buys, .Buys.active{
+      right: 50%;
+      transform: translateX(50%);
+    }
+}
+@media (max-width:400px) {
+
+      #BuysContainer{
+        width: 80vw;
+        min-width: 0;
+      }
+    
+}
