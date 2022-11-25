@@ -40,7 +40,7 @@ export default class Changeimg{
    // À ser resolvida, logo retornamos
    // Uma promisse com um intervalo dentro
    // Assim podemos escolher o tempo de pausa
-   // E antes do código proseguir, ele da 
+   // E antes do código prosseguir, ele da 
    // Um intervalo de 300ms
     function Sleep(time){
       return new Promise (resolve => setTimeout(resolve ,time))
